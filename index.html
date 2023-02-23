@@ -1,0 +1,142 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Podkova&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <title>Soundwind</title>
+</head>
+<body id="app">
+    <div class="menu">
+        <div class="title">
+            <img src="img/19a62ec3edac4e238d7c5271b919e2b2.png" alt="">
+            <div class="name-shop" id="titleApp">Soundwind</div>
+        </div>
+        
+        <ul>
+            <li class="is-active">
+                <!-- <span></span> -->
+                <img  class="icon-menu"src="img/e6b7e1447f851d33215a954d539150a7.png">Home
+            </li>
+            <li><img  v-on:click="is-active" class="icon-menu"src="img/d46cf14bf5d5d0cd6197791ad1718915.png">Explore</li>
+            <li><img  v-on:click="is-active" class="icon-menu"src="img/9a5c539391a991b16e151c4a5f1584cd.png">Saved</li>
+            <li><img  v-on:click="is-active" class="icon-menu"src="img/14733d70f9d790b046277d59acdeaece.png">Cart</li>
+            <li><img  v-on:click="is-active" class="icon-menu"src="img/e64f517a5de0f4dc7a795f601933211b.png">Selling</li>
+            <li><img  v-on:click="is-active" class="icon-menu"src="img/c84c2391a7f7f10fa71eb39b6c176379.png">Profile</li>
+            <li><img  v-on:click="is-active" class="icon-menu"src="img/ddb80634a2135586939700bb4962d046.png">Preach History</li>
+            <li><img  v-on:click="is-active" class="icon-menu"src="img/49b1e7408d1df4fb1db3cc573a74f684.png">Countact us</li>
+            <li><img  v-on:click="is-active" class="icon-menu"src="img/a056b1035f3bfdd8036db131869e1138.png">Setting</li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="header">
+            <div class="title-header">
+                Headphone <span class="title2-header">For the top band</span>
+            </div>
+            <div class="menu-header">
+                <div class="input-holder">
+                    <img src="img/82efea27fe5b4ffe2cd028303be8e36b.png" alt="" class="icon-search-box">
+                    <input type="text" class="search-box" placeholder="Search Product">
+                    <img src="img/c276648577736d71935a95cee0cfe387.png" alt="" class="icon-search-box">
+                    
+                </div>
+                <div class="icon-menu-header">
+                    <img src="img/ca1779101aca9c31f1cb18aa4c20d2e2.png" alt="">
+                </div>
+                <div class="icon-menu-header">
+                    <img src="img/3baee3a9c1da5002eb24771329c8a68c.png" alt="">
+                </div>
+                <div class="icon-menu-header">
+                    <img src="img/3d4d30f39051880718d7ef6465fa05d4.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="typical-products">
+            <div class="img-typical-products">
+                <img v-bind:src="products.product1.img" alt="">
+                <div class="ellipse-shadow"></div>
+            </div>
+            <div class="des-typical-products">
+                <div class="title-typical-products">
+                    {{products.product1.name}}
+                </div>
+                <div class="star-typical-products">
+                    <ul>
+                        <li><img src="img/e1422a4a32c1ac51603dcfc9de3816d9.png" alt=""></li>
+                        <li><img src="img/e1422a4a32c1ac51603dcfc9de3816d9.png" alt=""></li>
+                        <li><img src="img/e1422a4a32c1ac51603dcfc9de3816d9.png" alt=""></li>
+                        <li><img src="img/e1422a4a32c1ac51603dcfc9de3816d9.png" alt=""></li>
+                        <li><img src="img/e1422a4a32c1ac51603dcfc9de3816d9.png" alt=""></li>
+                        <li>{{products.product1.review}}</li>
+                    </ul>
+                </div>
+                <div class="introduce-typical-products">
+                    Ergonomic or cupe with on-oor controls up to 22 hours of tening time. Apple Wi crip & Closs 
+                </div>
+                <div class="price-typical-products">
+                    Price {{products.product1.price}}
+                </div>
+                <div class="color-typical-products">
+                    Color:
+                    <div class="color color-green"></div>
+                    <div class="color color-blue active-color"></div>
+                    <div class="color color-pink"></div>
+                    <div class="color color-purple"></div>
+                </div>
+                <div class="button-typical-product">
+                    <div class="heart-product">
+                        <img src="img/ce5cb0a0f1265f2f3d6facfadd8a8d96.png" alt="">
+                    </div>
+                    <div class="add-to-card"><p>Add to card</p></div>
+                    <div class="buy-now"><p>Buy Now</p></div>
+                </div>
+            </div>           
+        </div>
+        <div class="banner-typical-products">
+            <div class="title-banner">Summer headphones from top brands</div>
+            <div class="buy-it">Buy it Now</div>
+            <div class="img-banner-1">
+                <img src="img/e980ba056a83f22373ea918c2aaaff0a.png" alt="">
+            </div>
+            <div class="img-banner-2">
+                <img src="img/01b83d983b932864fa87711ecc52542b.png" alt="">
+            </div>
+        </div>
+        <div class="slider-products">
+            <button class="pre-btn"><img src="img/arrow.png" alt=""></button>
+            <button class="nxt-btn"><img src="img/arrow.png" alt=""></button>
+            <div class="item" v-for="product in products">
+                <div class="img-item">
+                    <img v-bind:src="product.img" alt="">
+                    <div class="ellipse-shadow"></div>
+                </div>
+                <div class="title-item">{{product.name}}</div>
+                <div class="price-item">Price {{product.price}}</div>
+                <div class="star-item">
+                    <img src="img/5a46d706a1ac890bb787301e5e6c7610.png" alt="">{{product.rate}}
+                </div>
+                <div class="add-item">
+                    <img src="img/green-41703_960_720.png" alt="">
+                </div>
+            </div>
+            
+        </div>
+        <div class="daily-deal">
+            <div class="title-daily-deal">
+                <div class="title1-daily">Daily Deals</div>
+                <div class="title2-daily">View All</div>
+            </div>
+            <div class="item-daily-deal" v-for=" product in products">
+                <div class="img-item-daily"><img v-bind:src="product.img" alt=""></div>
+                <div class="name-item-daily">{{product.name}}</div>
+                <div class="price-item-daily">{{product.price}}</div>
+                <div class="review-item-daily">{{product.review}} Review And {{product.order}} Order</div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="script.js"></script>
+</html>
