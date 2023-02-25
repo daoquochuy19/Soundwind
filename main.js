@@ -1,13 +1,3 @@
-// var vueInstance= new Vue({
-//     el: '#app',
-//     data: {
-//         title:'hiiiiii' 
-//     },
-//     method:{
-        
-//     }
-// })
-// console.log(vueInstance);
 const { createApp } = Vue;
 
 createApp({
@@ -100,4 +90,3 @@ createApp({
     },
   }
   ).mount('#App')
-    // console.log(products);
